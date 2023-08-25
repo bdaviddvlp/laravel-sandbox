@@ -29,7 +29,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN composer config -g repo.packagist composer https://packagist.org
 
-RUN composer run refresh
+RUN cd /var/www/laravel-sandbox
+
+# RUN composer run refresh
 
 # Install Laravel dependencies
 RUN composer install
