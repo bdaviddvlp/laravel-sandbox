@@ -21,7 +21,7 @@ COPY nginx/default.conf /etc/nginx/sites-available/default
 WORKDIR /var/www
 
 # Copy composer.lock and composer.json to install dependencies
-COPY ./* /var/www/
+COPY . /var/www/
 
 COPY .env.example /var/www/.env
 
