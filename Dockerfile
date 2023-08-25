@@ -20,13 +20,13 @@ COPY nginx/default.conf /etc/nginx/sites-available/default
 WORKDIR /var/www
 
 # Copy composer.lock and composer.json to install dependencies
-COPY composer.lock composer.json /var/www/
+COPY composer.json /var/www/
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Laravel dependencies
-RUN composer install
+RUN composer update
 
 # Expose port 80 for Nginx
 EXPOSE 80
