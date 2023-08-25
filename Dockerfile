@@ -1,5 +1,5 @@
 # Use the official PHP image as the base image
-FROM php:8.0-fpm
+FROM nfqlt/php81-fpm
 
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
