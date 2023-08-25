@@ -35,7 +35,7 @@ RUN composer config -g repo.packagist composer https://packagist.org
 # Install Laravel dependencies
 RUN composer install --no-scripts
 
-RUN sudo chmod +x artisan
+RUN pwd ; sleep 6 ; ls -la ; sleep 6
 
 RUN composer install
 
