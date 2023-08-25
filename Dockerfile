@@ -25,7 +25,7 @@ COPY ./* /var/www/
 
 COPY .env.example /var/www/.env
 
-RUN pwd ; sleep 6 ; ls -la ; sleep 6
+RUN pwd ; sleep 6 ; ls -la ; sleep 6 ; ls -la bootstrap ; sleep 6
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -33,11 +33,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer config -g repo.packagist composer https://packagist.org
 
 # RUN composer run refresh
-
-# Install Laravel dependencies
-RUN composer install --no-scripts
-
-RUN pwd ; sleep 6 ; ls -la ; sleep 6
 
 RUN composer install
 
