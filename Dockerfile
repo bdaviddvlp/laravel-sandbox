@@ -27,7 +27,7 @@ COPY composer.json /var/www/
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Laravel dependencies
-RUN sudo --user=www-data composer update
+RUN composer update
 
 # Expose port 80 for Nginx
 EXPOSE 80
