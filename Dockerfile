@@ -28,7 +28,7 @@ COPY .env.example /var/www/.env
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Laravel dependencies
-RUN composer update
+RUN composer install
 
 # Expose port 80 for Nginx
 EXPOSE 80
