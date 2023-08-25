@@ -22,6 +22,8 @@ WORKDIR /var/www
 # Copy composer.lock and composer.json to install dependencies
 COPY composer.json /var/www/
 
+COPY .env.example .env
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
