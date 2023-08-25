@@ -20,13 +20,12 @@ COPY nginx/default.conf /etc/nginx/sites-available/default
 # Set the working directory to /var/www
 WORKDIR /var/www
 
-# Define a volume to mount the Laravel project directory from the host
-VOLUME ["/opt/jenkins/jenkins_home/workspace/laravel-sandbox:/var/www"]
-
 # Copy composer.lock and composer.json to install dependencies
-# COPY composer.json /var/www/
+COPY ./* /var/www/
 
-# COPY .env.example /var/www/.env
+COPY .env.example /var/www/.env
+
+RUN pwd ; sleep 6 ; ls -la ; sleep 6
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
