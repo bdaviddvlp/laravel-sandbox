@@ -34,6 +34,10 @@ RUN composer config -g repo.packagist composer https://packagist.org
 # Install Laravel dependencies
 RUN composer install --no-scripts
 
+RUN cd vendor
+
+RUN cd ..
+
 RUN composer install
 
 # Expose port 80 for Nginx
