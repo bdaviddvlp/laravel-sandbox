@@ -29,7 +29,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN composer config -g repo.packagist composer https://packagist.org
 
-RUN cd /var/www/laravel-sandbox
+RUN ls -la > temp
+
+RUN cat temp
 
 # RUN composer run refresh
 
