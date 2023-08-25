@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 # Configure Nginx
 COPY nginx/default.conf /etc/nginx/sites-available/default
-RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+# RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
 # Set the working directory to /var/www
 WORKDIR /var/www
