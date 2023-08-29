@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql
 
 # Configure Nginx
-COPY nginx/default.conf /etc/nginx/sites-available/default
+COPY nginx/default.conf /etc/nginx/sites-available/default.conf
 # RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
 # Set the working directory to /var/www
