@@ -1,0 +1,7 @@
+version: '3'
+services:
+  laravel-sandbox:
+    image: laravel-sandbox
+    ports:
+      - "80:80"
+      - "9000:9000"
